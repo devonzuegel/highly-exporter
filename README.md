@@ -1,6 +1,20 @@
 # highly-exporter
 
-Export a large collection out of Highly. Necessary because their standard export tool to export it to CSV caps out at 1000 highlights.
+HighlyTM is shutting down, so I built a little tool to extract my prosthetic brain from their database before it gets deleted.
+
+This script will help you export a large collection out of Highly. Necessary because their standard export tool to export it to CSV caps out at 1000 highlights.
+
+## Usage
+
+Open `core.clj` and add your token to the `YOUR-TOKEN` variable. Then, run `lein run`. If you have a big collection (I had 29k highlights to export), it can take a few minutes. It'll spit out a report that looks like this when it's done:
+
+```
+325 pages of JSON results processed
+Found 28989 highlights across 3234 articles
+Printed articles to JSON file: results.json
+```
+
+And you can find the results in `results.json` at the top of this directory.
 
 ## Running the project
 

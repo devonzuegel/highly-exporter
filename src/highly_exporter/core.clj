@@ -46,44 +46,4 @@
           new-results      (concat results (get parsed "articles"))]
       (fetch-all (inc n) next-next-marker new-results))))
 
-; TODO: Scrub history of my keys before making public!
-; (defn -main [] (fetch-next-markers))
-
-;
-;
-; The functions below are just little exercises
-
-(defn build-array []
-  (reduce
-   (fn [new-arr num]
-     (println new-arr)
-     (conj new-arr num))
-   []
-   (range 10)))
-
-(defn fibonnaci []
-  (reduce
-   (fn [a b] (conj a (+' (last a) (last (butlast a)))))
-   [0 1]
-   (range 5)))
-
-(def highly-url-2 "https://www.highly.co/access/highlights.json?token=a07d7ba26453e9a47f7d86d85a37&next_marker=eyJ1c2VyX2FydGljbGUiOiIyMDIwLTAxLTA4VDAzOjEzOjIzLjY4OSswMDowMCJ9")
-
-(defn http-spike []
-  (let [parsed (cheshire/parse-string (:body (get-html highly-base-url)))]
-    ; (clojure.pprint/pprint parsed)
-    (println parsed)
-    (println "")
-    (let [next_marker (get parsed "next_marker")]
-      (println "1st marker:")
-      (println next_marker)
-      (println "")
-      (println "highly-url-2:")
-      (println (str highly-url-2))
-      (let [parsed2 (cheshire/parse-string (:body (get-html highly-url-2)))]
-        (println "")
-        (println parsed2)
-        (println "")
-        (println "2nd marker:")
-        (println (get parsed2 "next_marker"))
-        (= next_marker (get parsed2 "next_marker"))))))
+(defn -main [] (fetch-all 0 "" []))
