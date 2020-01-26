@@ -1,6 +1,6 @@
 # highly-exporter
 
-HighlyTM is shutting down, so I built a little tool to extract my prosthetic brain from their database before it gets deleted.
+[HighlyTM](https://www.highly.co/) is shutting down, so I built a little tool to extract my prosthetic brain from their database before it gets deleted.
 
 This script will help you export a large collection out of Highly. Necessary because their standard export tool to export it to CSV caps out at 1000 highlights.
 
@@ -15,6 +15,10 @@ Printed articles to JSON file: results.json
 ```
 
 And you can find the results in `results.json` at the top of this directory.
+
+## Requirements
+
+You'll need to install [Leiningen](https://leiningen.org) at the very least to run this project. To be honest, I don't remember what all the other dependencies are (if any), but since HighlyTM gave us such a short window to pull out our data I figured it's more important that I get this out there quickly than write perfect documentation.
 
 ## Running the project
 
