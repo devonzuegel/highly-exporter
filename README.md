@@ -15,7 +15,7 @@ Use Calva to connect to a running REPL server in the project.
 
 Use the `Load the current namespace in REPL window` command:
 
-```json
+```js
 {
   // This shortcut is custom to my setup.
   // I'm just putting it here for my own reference. :)
