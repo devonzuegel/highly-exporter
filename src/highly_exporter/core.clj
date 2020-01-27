@@ -32,7 +32,7 @@
         n-articles     (count results)]
     (println "Found" num-highlights "highlights across" n-articles "articles")))
 
-(defn handle-results [n-pages results]
+(defn handle-results! [n-pages results]
   (println n-pages "pages of JSON results processed")
   (count-all-highlights results)
   (cheshire/generate-stream results (io/writer "results.json"))  
@@ -40,7 +40,7 @@
 
 (defn fetch-all [n next-marker results]
   (if (is-final-page n next-marker)
-    (handle-results n results) ; Return final results
+    (handle-results! n results) ; Return final results
     (let [parsed           (get-parsed-result next-marker)
           next-next-marker (get-next-marker parsed)
           new-results      (concat results (get parsed "articles"))]
